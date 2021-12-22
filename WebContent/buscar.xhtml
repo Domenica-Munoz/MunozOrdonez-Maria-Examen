@@ -16,8 +16,8 @@
             	<h:inputText class="form-control" id="numeroCapitulo" value="#{crearAutores.titulo}" type="text"></h:inputText>
             	<h:commandButton class="btn-primary" value="Guardar" actionListener="#{crearAutores.prueba}" update="tabla"></h:commandButton>
            		<h3>Titulo del capitulo</h3>
-            	<h:inputText class="form-control" id="tituloCapitulo" value="#{crearLibro.tituloCapitulo}" type="text"></h:inputText>
-           		<h:commandButton class="btn-primary" value="Anadir" actionListener="#{busqueda.buscarPorTitulo}"></h:commandButton>
+            	<h:inputText class="form-control" id="tituloCapitulo" value="#{crearAutores.nombreAutor}" type="text"></h:inputText>
+           		<h:commandButton class="btn-primary" value="Anadir" actionListener="#{crearAutores.prueba2}"></h:commandButton>
             </h:form>
             <div id="tabla">
             	<h:dataTable id="tabla" value="#{crearAutores.capitulos}" var="cap" styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">

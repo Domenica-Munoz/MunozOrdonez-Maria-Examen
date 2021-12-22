@@ -47,6 +47,10 @@ public class CrearAutores implements Serializable{
 	public void prueba() {
 		this.capitulos = this.libroejb.bucarPorTitulo(this.titulo);
 	}
+	
+	public void prueba2() {
+		this.capitulos = this.libroejb.bucarPorAutor(this.nombreAutor);
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -62,6 +66,14 @@ public class CrearAutores implements Serializable{
 
 	public void setCapitulos(List<Capitulo> capitulos) {
 		this.capitulos = capitulos;
+	}
+
+	public String getNombreAutor() {
+		return nombreAutor;
+	}
+
+	public void setNombreAutor(String nombreAutor) {
+		this.nombreAutor = nombreAutor;
 	}
 	
 	
