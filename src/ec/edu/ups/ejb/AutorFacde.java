@@ -14,13 +14,12 @@ public class AutorFacde extends AbstractFacade<Autor> {
 	
 	public AutorFacde() {
 		super(Autor.class);
-		
 	}
 
 	@Override
 	protected EntityManager getEntityManager() {
 		// TODO Auto-generated method stub
-		return null;
+		return em;
 	}
 
 }

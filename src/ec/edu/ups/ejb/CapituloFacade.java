@@ -19,7 +19,7 @@ public class CapituloFacade extends AbstractFacade<Capitulo> {
 	@Override
 	protected EntityManager getEntityManager() {
 		// TODO Auto-generated method stub
-		return null;
+		return em;
 	}
 	
 
