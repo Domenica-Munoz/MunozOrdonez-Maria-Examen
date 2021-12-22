@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Creacion Datos</title>
+</h:head>
+<h:body>
+    <div class="card-body ">
+
+    <h:form id="fa1">
+        <div id="fa3">
+       		<h:form>
+       			<h3>Nombre del autor</h3>
+            	<h:inputText class="form-control" id="numeroCapitulo" value="#{busqueda.titulo}" type="text"></h:inputText>
+            	<h:commandButton class="btn-primary" value="Guardar" actionListener="#{busqueda.buscarPorTitulo}" update="tabla"></h:commandButton>
+           		<h3>Titulo del capitulo</h3>
+            	<h:inputText class="form-control" id="tituloCapitulo" value="#{crearLibro.tituloCapitulo}" type="text"></h:inputText>
+           		<h:commandButton class="btn-primary" value="Anadir" actionListener="#{busqueda.buscarPorTitulo}"></h:commandButton>
+            </h:form>
+            <div id="tabla">
+            	<h:dataTable id="tablaClientes" value="#{busqueda.libros}" var="lib" styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
+                   <h:column>
+                       <f:facet name="header" id="proid">Cliente</f:facet>#{lib.titulo}
+                   </h:column>
+               </h:dataTable>
+            </div>
+        </div>
+        
+    </h:form>
+</div>
+</h:body>
+</html>

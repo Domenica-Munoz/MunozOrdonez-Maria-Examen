@@ -21,26 +21,23 @@
             <h:inputText class="form-control" id="nPaginas" value="#{crearLibro.nPaginas}" type="text"></h:inputText>
             <p></p>
         </div>
-        <div>
-        	<h:form>
-        		<h3>Numero de capitulos</h3>
-	            <h:inputText class="form-control" id="nCapitulos" value="#{crearLibro.nCapitulos}" type="text"></h:inputText>
-	            <h:commandButton class="btn btn-primary btn-block" value="Aceptar" action="#{crearLibro.listaCapitulos}" update="contenedorCapitulos"></h:commandButton>
-        	</h:form>
+        <div id="fa3">
+        		<h:form>
+        			<h3>Numero del Capitulo</h3>
+	            <h:inputText class="form-control" id="numeroCapitulo" value="#{crearLibro.numeroCapitulo}" type="text"></h:inputText>
+	            <h3>Titulo</h3>
+	            <h:inputText class="form-control" id="tituloCapitulo" value="#{crearLibro.tituloCapitulo}" type="text"></h:inputText>
+	            <br></br>
+        		<h:commandButton class="btn-primary" value="Cargar Autores" actionListener="#{crearLibro.cargarAutores}" update="fa3">
+	            </h:commandButton>
+        		</h:form>
+        		<h:selectOneMenu value="#{crearLibro.autor}">
+				    <f:selectItems value="#{crearLibro.autores}" var="autor" itemValue="#{autor.codigo}" itemLabel="#{autor.nombre}"/>
+				</h:selectOneMenu>
+				<h:commandButton class="btn-primary" value="Anadir" actionListener="#{crearLibro.addCapitulos}"></h:commandButton>
+				<h:commandButton class="btn-primary" value="Guardar" actionListener="#{crearLibro.guardar}"></h:commandButton>
         </div>
-        <div id="contenedorCapitulos">
-            <h:dataTable id="tablaCap" value="#{crearLibro.capitulos}" var="ped" headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
-                <h:column headerText="Numero">
-                    <h:outputText value="#{ped.numero}" />
-                </h:column>
-                <h:column headerText="Titulo">
-                    <h:outputText value="#{ped.titulo}" />
-                </h:column>
-                <h:column headerText="Autor">
-                   
-                </h:column>
-            </h:dataTable>
-        </div>
+        
     </h:form>
 </div>
 </h:body>
