@@ -17,7 +17,6 @@ import ec.edu.ups.modelo.Capitulo;
 import ec.edu.ups.modelo.Libro;
 
 
-@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @RequestScoped
 public class CrearLibro implements Serializable{

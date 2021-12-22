@@ -24,21 +24,22 @@ public class CapituloFacade extends AbstractFacade<Capitulo> {
 		// TODO Auto-generated method stub
 		return em;
 	}
-	public List<Capitulo> bucarcapitulo(String titulo){
+	
+	public List<Capitulo> bucarPorTitulo(String titulo){
 		List<Capitulo> ca=new ArrayList<Capitulo>();
 		String consulta="Select ca from Capitulo ca where ca.titulo='"+titulo+"'";
 		try {
 			ca=(List<Capitulo>)em.createQuery(consulta).getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(">>>Warning(CaoituloFacde:buscarcapitulo:)"+e.getMessage());
+			System.out.println(">>>Warning(CaoituloFacde:bucarPorTitulo)"+e.getMessage());
 		}
 		return ca;
 	}
     
 	public List<Capitulo> bucarautor(String nombre){
 		List<Capitulo> ca=new ArrayList<Capitulo>();
-		String consulta="Select ca from Capitulo ca where ca.autor.nombre='"+nombre+"'";
+		String consulta="Select ca from Capitulo ca where ca.autor.nombre=:'"+nombre+"'";
 		try {
 			ca=(List<Capitulo>)em.createQuery(consulta).getResultList();
 		} catch (Exception e) {

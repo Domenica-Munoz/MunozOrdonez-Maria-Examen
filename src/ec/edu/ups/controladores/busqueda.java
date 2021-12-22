@@ -12,10 +12,7 @@ import org.jboss.weld.context.ejb.Ejb;
 
 import ec.edu.ups.ejb.CapituloFacade;
 import ec.edu.ups.modelo.Capitulo;
-import ec.edu.ups.modelo.Libro;
 
-
-@FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
 @RequestScoped
 public class busqueda implements Serializable {
@@ -24,10 +21,10 @@ public class busqueda implements Serializable {
 	private CapituloFacade ejbcapitulo;
 	
 	private String titulo;
-	private List<Capitulo> libros = new ArrayList<Capitulo>();
+	private List<Capitulo> capitulos = new ArrayList<Capitulo>();
 	
 	public void buscarPorTitulo() {
-		libros=this.ejbcapitulo.bucarcapitulo(this.titulo);
+		Capitulo cap = this.ejbcapitulo.find(1);
 	}
 
 	public String getTitulo() {
@@ -38,13 +35,14 @@ public class busqueda implements Serializable {
 		this.titulo = titulo;
 	}
 
-	public List<Capitulo> getLibros() {
-		return libros;
+	public List<Capitulo> getCapitulos() {
+		return capitulos;
 	}
 
-	public void setLibros(List<Capitulo> libros) {
-		this.libros = libros;
+	public void setCapitulos(List<Capitulo> capitulos) {
+		this.capitulos = capitulos;
 	}
+	
 	
 
 }
