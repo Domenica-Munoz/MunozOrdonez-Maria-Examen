@@ -10,7 +10,18 @@
 </h:head>
 <h:body>
     <div class="card-body ">
-
+	<div>
+			<ul class="nav">
+			          <li>
+			            <h:commandLink value="Buscar" action="#{navigator.reglaRedir('Buscar')}">
+			            </h:commandLink>
+			          </li>
+			          <li>
+			            <h:commandLink value="Buscar" action="#{navigator.reglaRedir('Index')}">
+			            </h:commandLink>
+			          </li>
+			 </ul>
+		</div>
     <h:form id="fa1">
         <div id="buscarProdFac">
             <h3>Nombre</h3>
@@ -34,12 +45,18 @@
         		<h:selectOneMenu value="#{crearLibro.autor}">
 				    <f:selectItems value="#{crearLibro.autores}" var="autor" itemValue="#{autor.codigo}" itemLabel="#{autor.nombre}"/>
 				</h:selectOneMenu>
+				<br></br>
+				<h:commandButton class="btn-primary" value="Informacion del autor" actionListener="#{crearLibro.actualizarNombres}" update="fa4"></h:commandButton>
+				<div id="fa4">
+					<h3>Nombre del autor</h3>
+		        	<h:outputText value="#{crearLibro.nombreAutor}"></h:outputText>
+		        	<h3>Nacionalidad del autor</h3>
+		        	<h:outputText value="#{crearLibro.nacionalidadAutor}"></h:outputText>
+		        </div>
 				<h:commandButton class="btn-primary" value="Anadir" actionListener="#{crearLibro.addCapitulos}"></h:commandButton>
 				<h:commandButton class="btn-primary" value="Guardar" actionListener="#{crearLibro.guardar}"></h:commandButton>
         </div>
-        <div id="fa4">
-        	
-        </div>
+        
     </h:form>
 </div>
 </h:body>

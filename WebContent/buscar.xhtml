@@ -9,15 +9,20 @@
     <title>Creacion Datos</title>
 </h:head>
 <h:body>
-
+		<div>
+			<h:form>
+				<h:commandButton class="btn-primary" value="Crear Libro" actionListener="#{navigator.reglaRedir('CrearLibro')}"></h:commandButton>
+				<h:commandButton class="btn-primary" value="Index" actionListener="#{navigator.reglaRedir('Index')}"></h:commandButton>
+			</h:form>
+		</div>
         <div id="fa3">
        		<h:form>
-       			<h3>Nombre del autor</h3>
+       			<h3>Titulo del capitulo</h3>
             	<h:inputText class="form-control" id="numeroCapitulo" value="#{crearAutores.titulo}" type="text"></h:inputText>
-            	<h:commandButton class="btn-primary" value="Guardar" actionListener="#{crearAutores.prueba}" update="tabla"></h:commandButton>
-           		<h3>Titulo del capitulo</h3>
+            	<h:commandButton class="btn-primary" value="Buscar" actionListener="#{crearAutores.prueba}" update="tabla"></h:commandButton>
+           		<h3>Nombre del autor</h3>
             	<h:inputText class="form-control" id="tituloCapitulo" value="#{crearAutores.nombreAutor}" type="text"></h:inputText>
-           		<h:commandButton class="btn-primary" value="Anadir" actionListener="#{crearAutores.prueba2}"></h:commandButton>
+           		<h:commandButton class="btn-primary" value="Buscar" actionListener="#{crearAutores.prueba2}"></h:commandButton>
             </h:form>
             <div id="tabla">
             	<h:dataTable id="tabla" value="#{crearAutores.capitulos}" var="cap" styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
@@ -27,8 +32,8 @@
                        <f:facet name="header" id="proid">Numero de paginas</f:facet>#{cap.libro.numeropagina}
                        <f:facet name="header" id="proid">Tiulo</f:facet>#{cap.titulo}
                        <f:facet name="header" id="proid">Numero</f:facet>#{cap.numero}
-                       <f:facet name="header" id="proid">Tiulo</f:facet>#{cap.autor.nombre}
-                       <f:facet name="header" id="proid">Tiulo</f:facet>#{cap.autor.nacionalidad}
+                       <f:facet name="header" id="proid">Autor</f:facet>#{cap.autor.nombre}
+                       <f:facet name="header" id="proid">Nacionalidad</f:facet>#{cap.autor.nacionalidad}
                    </h:column>
                </h:dataTable>
             </div>

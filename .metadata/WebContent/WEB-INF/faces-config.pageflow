@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16401710229430" configfile="/MunozOrdonez-Maria-Examen/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="crearlibro" id="pf16401713796309" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf164017177914411" path="/crearlibro"/>
+  <nodes xsi:type="pageflow:PFPage" name="buscar.xhtml" id="pf164017177914412" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf164017177914411" path="/buscar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearlibro.xhtml" id="pf164017177914413" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf164017177914414" path="/crearlibro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="buscar" id="pf164017177914415" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf164017177914414" path="/buscar"/>
+  <links id="pf164017177914411" target="pf16401713796309" source="pf164017177914412" outcome="crearlibro"/>
+  <links id="pf164017177914414" target="pf164017177914415" source="pf164017177914413" outcome="buscar"/>
+</pageflow:Pageflow>

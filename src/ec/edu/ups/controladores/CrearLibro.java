@@ -40,6 +40,9 @@ public class CrearLibro implements Serializable{
 	private String autor;
 	private int numeroCapitulo;
 	private String tituloCapitulo;
+	private Autor autorAjax;
+	private String nombreAutor;
+	private String nacionalidadAutor;
 	
 	public void cargarAutores() {
 		System.out.println("********************************");
@@ -65,6 +68,22 @@ public class CrearLibro implements Serializable{
 		}
 	}
 	
+	public void actualizarNombres() {
+		this.autorAjax=this.autorejb.find(Integer.parseInt(autor));
+		this.nacionalidadAutor=this.autorAjax.getNacionalidad();
+		this.nombreAutor=this.autorAjax.getNombre();
+	}
+	
+	
+	
+	public Autor getAutorAjax() {
+		return autorAjax;
+	}
+
+	public void setAutorAjax(Autor autorAjax) {
+		this.autorAjax = autorAjax;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -88,6 +107,24 @@ public class CrearLibro implements Serializable{
 	}
 	public void setnCapitulos(int nCapitulos) {
 		this.nCapitulos = nCapitulos;
+	}
+	
+	
+
+	public String getNombreAutor() {
+		return nombreAutor;
+	}
+
+	public void setNombreAutor(String nombreAutor) {
+		this.nombreAutor = nombreAutor;
+	}
+
+	public String getNacionalidadAutor() {
+		return nacionalidadAutor;
+	}
+
+	public void setNacionalidadAutor(String nacionalidadAutor) {
+		this.nacionalidadAutor = nacionalidadAutor;
 	}
 
 	public List<Capitulo> getCapitulos() {

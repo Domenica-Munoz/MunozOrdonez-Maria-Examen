@@ -9,6 +9,12 @@
     <title>Creacion Datos</title>
 </h:head>
 <h:body>
+	<div>
+			<h:form>
+				<h:commandButton class="btn-primary" value="Buscar" actionListener="#{navigator.reglaRedir('CrearLibro')}"></h:commandButton>
+				<h:commandButton class="btn-primary" value="Buscar" actionListener="#{navigator.reglaRedir('Buscar')}"></h:commandButton>
+			</h:form>
+		</div>
     <h:form id="formPrincipal">
     	<h:commandButton class="btn btn-success" style="margin: 10px" value="Primero" action="#{crearAutores.crear()}">
         </h:commandButton>

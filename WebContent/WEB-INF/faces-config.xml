@@ -5,4 +5,21 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
     version="2.3">
 
+
+
+	<navigation-rule> 
+	   <from-view-id>/buscar.xhtml</from-view-id> 
+	   <navigation-case> 
+	      <from-outcome>crearlibro</from-outcome> 
+	      <to-view-id>/crearlibro</to-view-id> 
+	   </navigation-case>
+	 </navigation-rule>
+	 
+	 <navigation-rule> 
+	   <from-view-id>/crearlibro.xhtml</from-view-id> 
+	   <navigation-case> 
+	      <from-outcome>buscar</from-outcome> 
+	      <to-view-id>/buscar</to-view-id> 
+	   </navigation-case>
+	 </navigation-rule>
 </faces-config>
